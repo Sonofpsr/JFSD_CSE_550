@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pH Scale</title>
+    <centre><h1><centre>PH SCALE</h1></centre> 
+    <style>
+        .ph-scale {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border: 1px solid #000;
+            padding: 2px;
+        }
+        .ph-level {
+            width: 100%;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #000;
+        }
+        .ph-level-0 { background-color: #180adc; } /* Red */
+        .ph-level-1 { background-color: #3633d5; }
+        .ph-level-2 { background-color: #414fc5; }
+        .ph-level-3 { background-color: #4a58da; }
+        .ph-level-4 { background-color: #7a85e3; }
+        .ph-level-5 { background-color: #8b9fdf; } /* Yellow */
+        .ph-level-6 { background-color: #a2a0c9; }
+        .ph-level-7 { background-color: #439608; } /* Green */
+        .ph-level-8 { background-color: #b579a7; }
+        .ph-level-9 { background-color: #e578e5; }
+        .ph-level-10 { background-color: #d95cd7; }
+        .ph-level-11 { background-color: #d746ce; }
+        .ph-level-12 { background-color: #e238c3; }
+        .ph-level-13 { background-color: #d51cb6; }
+        .ph-level-14 { background-color: #ab09a3; } /* Dark Green */
+    </style>
+</head>
+<body>
+    <div class="ph-scale">
+        <div class="ph-level ph-level-0">0</div>
+        <div class="ph-level ph-level-1">1</div>
+        <div class="ph-level ph-level-2">2</div>
+        <div class="ph-level ph-level-3">3</div>
+        <div class="ph-level ph-level-4">4</div>
+        <div class="ph-level ph-level-5">5</div>
+        <div class="ph-level ph-level-6">6</div>
+        <div class="ph-level ph-level-7">7 NEUTRAL</div>
+        <div class="ph-level ph-level-8">8</div>
+        <div class="ph-level ph-level-9">9</div>
+        <div class="ph-level ph-level-10">10</div>
+        <div class="ph-level ph-level-11">11</div>
+        <div class="ph-level ph-level-12">12</div>
+        <div class="ph-level ph-level-13">13</div>
+        <div class="ph-level ph-level-14">14</div>
+    </div>
+</body>
+</html>
