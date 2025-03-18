@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALLIANCE SPECIAL Restaurant Menu</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #menu {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .category {
+            margin-bottom: 20px;
+        }
+
+        .category h3 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .item-name {
+            font-weight: bold;
+        }
+
+        .item-price {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        button.add-to-cart {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        button.add-to-cart:hover {
+            background-color: #2ecc71;
+        }
+
+        /* Shopping Cart Styles */
+        #cart {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #cart h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        #cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #total-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e74c3c;
+            text-align: right;
+        }
+
+        #place-order {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            display: block;
+            margin: 10px auto;
+        }
+
+        #place-order:hover {
+            background-color: #3498db;
+        }
+
+        /* Bill Section */
+        #bill {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #pay-now {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            display: block;
+            margin: 10px auto;
+        }
+
+        #pay-now:hover {
+            background-color: #c0392b;
+        }
+
+        /* Receipt Styles */
+        #receipt {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: none;
+        }
+
+        #receipt h3 {
+            color: #27ae60;
+        }
+
+        #receipt-items {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #receipt-total {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        #receipt-footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to ALLIANCE SPECIAL</h1>
+    </header>
+
+    <section id="menu">
+        <h2>Our Non-Veg Menu</h2>
+
+        <!-- Tandoori & Grilled -->
+        <div class="category" id="tandoori-grilled">
+            <h3>Tandoori & Grilled</h3>
+            <ul>
+                <li>
+                    <span class="item-name">Tandoori Chicken</span>
+                    <span class="item-price">₹1599</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Chicken Tikka</span>
+                    <span class="item-price">₹1399</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Butter Chicken (Murgh Makhani)</span>
+                    <span class="item-price">₹1499</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Chicken 65</span>
+                    <span class="item-price">₹1299</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Lamb/Mutton Biryani</span>
+                    <span class="item-price">₹1699</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Rogan Josh</span>
+                    <span class="item-price">₹1799</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Seekh Kebab</span>
+                    <span class="item-price">₹1299</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Chicken/Mutton Tikka Masala</span>
+                    <span class="item-price">₹1499</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Mutton Marag</span>
+                    <span class="item-price">₹1699</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Ahuna Mutton</span>
+                    <span class="item-price">₹1799</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Tandoori Fish</span>
+                    <span class="item-price">₹1399</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Fish Tikka</span>
+                    <span class="item-price">₹1499</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Curries -->
+        <div class="category" id="curries">
+            <h3>Curries</h3>
+            <ul>
+                <li>
+                    <span class="item-name">Mutton Curry</span>
+                    <span class="item-price">₹1599</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Chicken Curry</span>
+                    <span class="item-price">₹1399</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Fish Curry</span>
+                    <span class="item-price">₹1499</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Jhinga Masala (Prawn Masala)</span>
+                    <span class="item-price">₹1799</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Palak Chicken</span>
+                    <span class="item-price">₹1499</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+                <li>
+                    <span class="item-name">Machher Jhol (Bengali Fish Curry)</span>
+                    <span class="item-price">₹1599</span>
+                    <button class="add-to-cart">Add to Cart</button>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- Shopping Cart Summary -->
+    <section id="cart">
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <p id="total-price">Total: ₹0.00</p>
+        <button id="place-order">Place Order</button>
+    </section>
+
+    <!-- Bill Section (Initially hidden) -->
+    <section id="bill" style="display: none;">
+        <h3>Your Bill</h3>
+        <ul id="bill-items"></ul>
+        <p id="bill-total"></p>
+        <button id="pay-now">Pay Now</button>
+    </section>
+
+    <!-- Receipt Section (Initially hidden) -->
+    <section id="receipt">
+        <h3>Receipt</h3>
+        <ul id="receipt-items"></ul>
+        <p id="receipt-total"></p>
+        <p id="receipt-footer">Thank you for your order! Come again soon.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ALLIANCE SPECIAL | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Initialize an empty cart
+        let cart = [];
+
+        // Function to update the cart display
+        function updateCart() {
+            const cartItemsList = document.getElementById('cart-items');
+            const totalPriceElement = document.getElementById('total-price');
+
+            // Clear current cart display
+            cartItemsList.innerHTML = '';
+
+            // Add items to the cart list
+            let total = 0;
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = ${item.name} - ₹${item.price};
+                cartItemsList.appendChild(li);
+                total += parseFloat(item.price);
+            });
+
+            // Update the total price
+            totalPriceElement.textContent = Total: ₹${total.toFixed(2)};
+        }
+
+        // Add event listeners to the "Add to Cart" buttons
+        document.querySelectorAll('.add-to-cart').forEach((button, index) => {
+            button.addEventListener('click', () => {
+                const itemName = button.previousElementSibling.previousElementSibling.textContent.trim();
+                const itemPrice = button.previousElementSibling.textContent.trim().slice(1);
+
+                // Add the item to the cart
+                cart.push({ name: itemName, price: itemPrice });
+                
+                // Update the cart display
+                updateCart();
+            });
+        });
+
+        // Handle order placement
+        document.getElementById('place-order').addEventListener('click', () => {
+            // Hide the menu and cart
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('cart').style.display = 'none';
+
+            // Show the bill section
+            document.getElementById('bill').style.display = 'block';
+
+            const billItemsList = document.getElementById('bill-items');
+            const billTotalElement = document.getElementById('bill-total');
+            
+            // Display the items and total in the bill section
+            let billTotal = 0;
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = ${item.name} - ₹${item.price};
+                billItemsList.appendChild(li);
+                billTotal += parseFloat(item.price);
+            });
+
+            billTotalElement.textContent = Total Bill: ₹${billTotal.toFixed(2)};
+        });
+
+        // Handle payment
+        document.getElementById('pay-now').addEventListener('click', () => {
+            alert('Thank you for your order! Payment has been received.');
+
+            // Hide the bill section and show the receipt
+            document.getElementById('bill').style.display = 'none';
+            document.getElementById('receipt').style.display = 'block';
+
+            const receiptItemsList = document.getElementById('receipt-items');
+            const receiptTotalElement = document.getElementById('receipt-total');
+            
+            // Display the items and total in the receipt
+            let receiptTotal = 0;
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = ${item.name} - ₹${item.price};
+                receiptItemsList.appendChild(li);
+                receiptTotal += parseFloat(item.price);
+            });
+
+            receiptTotalElement.textContent = Total Paid: ₹${receiptTotal.toFixed(2)};
+        });
+    </script>
+
+</body>
+</html>
